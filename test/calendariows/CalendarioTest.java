@@ -13,7 +13,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- *
+ * Clase test para el Calendario
  * @author sofunA
  */
 public class CalendarioTest {

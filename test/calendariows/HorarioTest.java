@@ -40,6 +40,7 @@ public class HorarioTest {
         for (int horas : horariosDeInicioValidos) {
             Horario horarioDe1Hora = new Horario(DIA, horas, horas+1);
             Horario horarioDe2Horas = new Horario(DIA, horas, horas+2);
+
             assertTrue("Duracion de mas de dos horas", 
                     horarioDe1Hora.tieneDuracionValida());
             

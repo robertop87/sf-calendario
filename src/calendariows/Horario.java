@@ -1,39 +1,51 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package calendariows;
+
+import org.apache.commons.lang3.ArrayUtils;
 
 /**
  *
  * @author sofunA
  */
-class Horario {
+public class Horario {
     
     private int dia;
-    private int hrInicio;
-    private int hrFin;
+    private int horaInicio;
+    private int horaFin;
+    
+    private final int MAXIMA_DURACION = 2; //tiempo en horas
 
-    Horario(int dia, int hrInicio, int hrFin) {
-       
+    Horario(int dia, int horaInicio, int horaFin) {
+       this.dia = dia;
+       this.horaInicio = horaInicio;
+       this.horaFin = horaFin;
     }
     
     @Override
     public boolean equals(Object obj){
         Horario horario = (Horario) obj;
         return  this.dia == horario.dia &&
-                this.hrInicio == horario.hrInicio &&
-                this.hrFin == horario.hrFin;
+                this.horaInicio == horario.horaInicio &&
+                this.horaFin == horario.horaFin;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
         hash = 97 * hash + this.dia;
-        hash = 97 * hash + this.hrInicio;
-        hash = 97 * hash + this.hrFin;
+        hash = 97 * hash + this.horaInicio;
+        hash = 97 * hash + this.horaFin;
         return hash;
+    }
+
+    public boolean estaEnRango(int[] horariosDeInicioDisponibles,
+            int[] horariosDeFinDisponibles) {
+        return ArrayUtils.contains(horariosDeInicioDisponibles, horaInicio) &&
+                ArrayUtils.contains(horariosDeFinDisponibles, horaFin);
+    }
+
+    public boolean tieneDuracionValida() {
+        throw new UnsupportedOperationException("Softure: Ningun horario debe"
+                + " tener una duracion mayor de dos horas");
     }
 
 }

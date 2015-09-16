@@ -45,7 +45,7 @@ public class HorarioTest {
                     horarioDe1Hora.tieneDuracionValida());
             
             assertTrue("Duracion de mas de dos horas",
-                    horarioDe1Hora.tieneDuracionValida());
+                    horarioDe2Horas.tieneDuracionValida());
         }
     }
     

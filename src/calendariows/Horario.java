@@ -44,8 +44,9 @@ public class Horario {
     }
 
     public boolean tieneDuracionValida() {
-        throw new UnsupportedOperationException("Softure: Ningun horario debe"
-                + " tener una duracion mayor de dos horas");
+        int difHr;
+        difHr = horaFin-horaInicio;
+        return ( difHr==2 || difHr==1 );
     }
 
 }

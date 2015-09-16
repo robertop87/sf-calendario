@@ -41,7 +41,9 @@ public class CalendarioWSTest {
         String[] args = null;
         CalendarioWS.main(args);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
+        //El test no esta haciendo mas que probar una clase vacia pero
+        //la funcion "fail("");" es la que hacia fallar el test forzadamente.
     }
     
 }

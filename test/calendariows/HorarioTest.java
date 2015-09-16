@@ -49,4 +49,18 @@ public class HorarioTest {
         }
     }
     
+    @Test
+    public void testVerificarDuracionInvlida() {
+        for (int horas : horariosDeInicioValidos) {
+            Horario horarioDe1Hora = new Horario(DIA, horas, horas+3);
+            Horario horarioDe2Horas = new Horario(DIA, horas, horas+4);
+
+            assertFalse("Duracion de mas de dos horas", 
+                    horarioDe1Hora.tieneDuracionValida());
+            
+            assertFalse("Duracion de mas de dos horas",
+                    horarioDe2Horas.tieneDuracionValida());
+        }
+    }
+    
 }

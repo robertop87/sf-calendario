@@ -34,4 +34,9 @@ class Calendario {
         return horarios.contains(horario);
     }
 
+    public int contarHorarios() {
+        throw new UnsupportedOperationException("SOFTURE: deberia devolver la "
+                + "cantidad de horarios que se registraron");
+    }
+
 }

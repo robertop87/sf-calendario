@@ -44,9 +44,8 @@ public class Horario {
     }
 
     public boolean tieneDuracionValida() {
-        int difHr;
-        difHr = horaFin-horaInicio;
-        return ( difHr==2 || difHr==1 );
+        int duracion = horaFin - horaInicio;
+        return ( duracion <= MAXIMA_DURACION && duracion > 0 );
     }
 
 }

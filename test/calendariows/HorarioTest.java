@@ -50,17 +50,22 @@ public class HorarioTest {
     }
     
     @Test
-    public void testVerificarDuracionInvlida() {
-        for (int horas : horariosDeInicioValidos) {
-            Horario horarioDe1Hora = new Horario(DIA, horas, horas+3);
-            Horario horarioDe2Horas = new Horario(DIA, horas, horas+4);
-
-            assertFalse("Duracion de mas de dos horas", 
-                    horarioDe1Hora.tieneDuracionValida());
-            
-            assertFalse("Duracion de mas de dos horas",
-                    horarioDe2Horas.tieneDuracionValida());
-        }
+    public void testVerificarDuracionInvalida() {
+        int horaInicio = 9;
+        int horaFin = horaInicio + 3;
+        //Horario de 3 horas
+        Horario horarioDeDuracionInvalida = new Horario(DIA, horaInicio, horaFin);
+        assertFalse("Es un horario valido", 
+                    horarioDeDuracionInvalida.tieneDuracionValida());
+        //Horario de duracion nula (0)
+        horarioDeDuracionInvalida = new Horario(DIA, horaInicio, horaInicio);
+        assertFalse("Es un horario valido", 
+                    horarioDeDuracionInvalida.tieneDuracionValida());
+        
+        //Horario de duracion negativa
+        horarioDeDuracionInvalida = new Horario(DIA, horaInicio, horaInicio-10);
+        assertFalse("Es un horario valido", 
+                    horarioDeDuracionInvalida.tieneDuracionValida());
     }
     
 }

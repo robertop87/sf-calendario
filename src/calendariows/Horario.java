@@ -40,7 +40,7 @@ public class Horario {
     public boolean estaEnRango(int[] horariosDeInicioDisponibles,
             int[] horariosDeFinDisponibles) {
         return ArrayUtils.contains(horariosDeInicioDisponibles, horaInicio) &&
-                ArrayUtils.contains(horariosDeFinDisponibles, horaFin);
+               ArrayUtils.contains(horariosDeFinDisponibles, horaFin);
     }
 
     public boolean tieneDuracionValida() {
